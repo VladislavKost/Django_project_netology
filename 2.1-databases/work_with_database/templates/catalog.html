@@ -24,7 +24,7 @@
             <h3>{{ phone.name }}</h3>
           </a>
           <div class="price">Стоимость: {{ phone.price }} ₽</div>
-          <img height="400" src="{{ phone.image }}" alt="{{ phone.name }}"/>
+          <img height="400" src="{% static '/' %}{{ phone.image }}" alt="{{ phone.name }}"/>
         </div>
       {% endfor %}
     </div>

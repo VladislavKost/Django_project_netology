@@ -7,17 +7,24 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Book',
+            name="Book",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=64, verbose_name='Название')),
-                ('author', models.CharField(max_length=64, verbose_name='Автор')),
-                ('pub_date', models.DateField(verbose_name='Дата публикации')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=64, verbose_name="Название")),
+                ("author", models.CharField(max_length=64, verbose_name="Автор")),
+                ("pub_date", models.DateField(verbose_name="Дата публикации")),
             ],
         ),
     ]

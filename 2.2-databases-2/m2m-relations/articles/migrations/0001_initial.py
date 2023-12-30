@@ -7,22 +7,34 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Article',
+            name="Article",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=256, verbose_name='Название')),
-                ('text', models.TextField(verbose_name='Текст')),
-                ('published_at', models.DateTimeField(verbose_name='Дата публикации')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='', verbose_name='Изображение')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=256, verbose_name="Название")),
+                ("text", models.TextField(verbose_name="Текст")),
+                ("published_at", models.DateTimeField(verbose_name="Дата публикации")),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True, null=True, upload_to="", verbose_name="Изображение"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Статья',
-                'verbose_name_plural': 'Статьи',
+                "verbose_name": "Статья",
+                "verbose_name_plural": "Статьи",
             },
         ),
     ]

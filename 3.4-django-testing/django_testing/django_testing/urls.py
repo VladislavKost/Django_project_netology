@@ -23,6 +23,6 @@ router = DefaultRouter()
 router.register("courses", CoursesViewSet, basename="courses")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("api/v1/", include(router.urls)),
 ]

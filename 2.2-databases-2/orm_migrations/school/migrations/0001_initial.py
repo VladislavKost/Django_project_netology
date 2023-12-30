@@ -8,37 +8,54 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Student',
+            name="Student",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=30)),
-                ('group', models.CharField(max_length=10)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=30)),
+                ("group", models.CharField(max_length=10)),
             ],
             options={
-                'verbose_name': 'Ученик',
-                'verbose_name_plural': 'Ученики',
+                "verbose_name": "Ученик",
+                "verbose_name_plural": "Ученики",
             },
         ),
         migrations.CreateModel(
-            name='Teacher',
+            name="Teacher",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=30)),
-                ('subject', models.CharField(max_length=10)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=30)),
+                ("subject", models.CharField(max_length=10)),
             ],
             options={
-                'verbose_name': 'Учитель',
-                'verbose_name_plural': 'Учителя',
+                "verbose_name": "Учитель",
+                "verbose_name_plural": "Учителя",
             },
         ),
         migrations.AddField(
-            model_name='student',
-            name='teacher',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='school.Teacher'),
+            model_name="student",
+            name="teacher",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="school.Teacher"
+            ),
         ),
     ]
