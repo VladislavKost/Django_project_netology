@@ -16,5 +16,12 @@
             </div>
             {% endfor %}
         </div>
+        {% if page.has_previous %}
+        <a class="button button-primary" href="/books/{{ prev_page_url }}/">⟵ {{ prev_page_url }} </a>
+        {% endif %}
+        <a> | {{ page.number }} страница | </a>
+        {% if page.has_next %}
+            <a class="button button-primary" href="/books/{{ next_page_url }}/"> {{ next_page_url }} ⟶</a>
+        {% endif %}
     </div>
 {% endblock %}
