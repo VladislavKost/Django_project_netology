@@ -8,25 +8,14 @@ def index(request):
 
 def show_catalog(request):
     template = "catalog.html"
+    SORT_MAP = {
+        "name": "name",
+        "min_price": "price",
+        "max_price": "-price",
+    }
     filter_value = request.GET.get("sort", "name")
-    if filter_value == "min_price":
-        filter_phones = "price"
-    elif filter_value == "max_price":
-        filter_phones = "-price"
-    else:
-        filter_phones = "name"
-    phone_objects = Phone.objects.order_by(filter_phones)
-    phones = []
-    for phone in phone_objects:
-        phones.append(
-            {
-                "name": phone.name,
-                "price": phone.price,
-                "image": phone.image,
-                "slug": phone.slug,
-            }
-        )
-    context = {"phones": phones}
+    phone_objects = Phone.objects.order_by(SORT_MAP.get(filter_value))
+    context = {"phones": phone_objects}
     return render(request, template, context)
 
 
